@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>襄江蒲苇岸——愿沿岸皆为美忆</title>
+
+    <style>
+        a:link {
+            color: #191970;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #191970;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ff7f50;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #b0c4de;
+        }
+
+        #totop {
+            font-family: 'Lucida Calligraphy';
+            font-size:13px;
+            position: fixed;
+            left: 13px;
+            top: 500px;
+            display: inline-block;
+            padding: 0.8em 1.0em;
+            text-align: center;
+            cursor: pointer;
+            user-select: none;
+            color: white;
+        }
+
+        #totop::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            border-radius: 4px;
+            transition: box-shadow .5s ease, transform .2s ease;
+            will-change: transform;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+            transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+        }
+
+        #totop:hover::before {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+        }
+
+        #totop::after {
+            position: relative;
+            display: inline-block;
+            content: attr(data-title);
+            transition: transform .2s ease;
+            font-weight: bold;
+            letter-spacing: .01em;
+            will-change: transform;
+            transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
+        }
+
+        #main {
+            margin: 0 auto;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: row;
+            background-color: burlywood;
+            overflow: auto;
+        }
+
+        #nav {
+            font-size: 18px;
+            min-width: 800px;
+        }
+
+        #aside {
+            font-size: 12px;
+            min-width: 120px;
+            max-width: 120px;
+            padding-left: 5px;
+            padding-right: 5px;
+            background-color: blanchedalmond;
+            overflow: auto;
+        }
+
+        #head_pic {
+            margin-top: 20px;
+            background-image: url(images/head.jpg);
+            width: 100px;
+            height: 100px;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #C1 {
+            font-size: 17px;
+            color: brown;
+        }
+
+        #content {
+            font-family: 'Monotype Corsiva';
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: burlywood;
+            display: flex;
+            flex-direction: column;
+            overflow: auto;
+        }
+
+        #show_diary1 {
+            border: none;
+            background-color: burlywood;
+            color: brown;
+        }
+
+        #show_diary2 {
+            border: none;
+            background-color: burlywood;
+            color: brown;
+        }
+
+        #bottom {
+            font-size: 16px;
+            color: #191970;
+        }
+    </style>
+</head>
+
+<body leftmargin="10" topmargin="20">
+
+    <a id="totop" href="#" data-title="Back to top"></a>
+
+    <div id="head">
+        <center>
+            <img src="images/way.jpg" width="1200" height="465" />
+        </center>
+    </div>
+    <hr />
+    <div id="nav">
+        <center>
+            &emsp;&emsp;&emsp;&emsp;
+            <a href="javascript:void(0)" onclick="firstpage_click()">首页</a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a href="#C1">页主的自我介绍</a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a href="#C2">日志</a>
+            &emsp;&emsp;&emsp;&emsp;
+            <a href="#C3">主人的留言</a>
+            &emsp;&emsp;&emsp;&emsp;
+        </center>
+    </div>
+    <hr />
+    <div id="main">
+        <div id="aside" width="12%">
+            <center>
+                <button id="head_pic" type="button" onclick="head_click()"></button>
+                <br />
+                <h2><a id="C1">襄江的蒲苇</a></h2>
+                <hr />
+            </center>
+            ⚪ 一个普通的见习程序员。<br />
+            ⚪ 不可辜负之物唯家人朋友、代码与酒。<br />
+            ⚪ 说不上乐观上进，亦绝非迷茫自卑。<br />
+            <hr />
+            戳我：<br />
+            ⚪ 邮箱：t2017013579<br />@163.com<br />
+            ⚪ QQ：2022679394<br />
+            <hr />
+        </div>
+        <div id="content" width="86%">
+            <ul>
+                <li>
+                    <h2><a id="C2">Diary</a></h2>
+                    <center>
+                        <em>（最新）</em>无题&emsp;19.7.3&emsp;&emsp;&emsp;
+                        <button id="show_diary1" onclick="diary_click('article1')">展开/收起</button>
+                    </center>
+                    <br />
+                    <div id="article1">
+                        &emsp;&emsp;行内有句戏言：负责前端开发的工程师往往处在鄙视链的底端，因为“他们写的bug全被万能的浏览器处理掉了。”（笑）<br />
+                        &emsp;&emsp;玩笑归玩笑，却也暴露了浏览器的“人性化处理”背后隐藏的问题——解析网页变得不那么轻松。这不禁使我联想起早先做过的网页数据检索的大作业，
+                        上百网页之中，标签奇异、不甚规范者比比皆是，当时还着实成为了标签筛选工作中的一个难题困扰着我们。显然，宽松的开发要求会对等地带来艰辛的维护与再利用过程。<br />
+                        &emsp;&emsp;由此可见，完善地掌握前端开发的细节规范，应该是程序开发者出于道义和远见的必要行为。<br />
+                        <br />
+                    </div>
+                    <br />
+                    <br />
+                    <center>
+                        爱的札记&emsp;18.9.30&emsp;&emsp;&emsp;
+                        <button id="show_diary2" onclick="diary_click('article2')">展开/收起</button>
+                    </center>
+                    <br />
+                    <div id="article2">
+                        （一）爱的定义<br />
+                        <br />
+                        &emsp;&emsp;年少的我们不懂得什么是爱。<br />
+                        &emsp;&emsp;少年的我们努力去探索什么是爱。<br />
+                        &emsp;&emsp;后来的我们，或许仍然不懂爱的定义，或许已达成了心中对爱的憧憬，也可能正“大彻大悟”或可称为是“懵懂无知”地自感“不会再爱了”。<br />
+                        &emsp;&emsp;所以爱到底是什么？无法下一个准确的定义，只能描摹一下它的特征并加以逼近。<br />
+                        &emsp;&emsp;爱一个人就是心疼一个人，对被爱者施以一种莫须有的哀怜，有一种做被爱者的保护人的冲动，做一些在旁人看来完全没有必要的事：
+                        怕TA冻着或饿着，怕TA遇到意外，对待心里的那个TA就像是一件易损的瓷器，甚至，对于这种过分的担忧已经有所自省却仍无法自拔，只得强迫自己终日碌碌以消遣念想。
+                        爱得深了，潜在的父性和母性总在不经意间参加进来。若只是迷恋而并不心疼，那这绝非爱，充其量是停留在感官上的性。<br />
+                        &emsp;&emsp;既然心疼，那无疑是给自己平添几分痛苦，如果另一方同时也爱着这一方，这种双向的痛苦却又使人幸福。单向的爱情是利用单方的痛苦来换取对方快乐的付出，
+                        双向的爱情是双方竭尽自己所能使对方感到快乐幸福的交换。<br />
+                        &emsp;&emsp;爱的付出使人“痛苦”而不自知，想必这便是熟语常说的“在爱中迷失自我”。然而某些情况相反，爱又能使人重新认识自我——
+                        谁又能否认自己没有在爱的经历中发现自己身上的优点和内心温暖的一面呢？<br />
+                        &emsp;&emsp;说出这么多特征，然我仍不知道什么是爱情。我只知道，如果那张脸庞使你感到一种隐秘的思念，如果那件衣衫使你感到一种莫名的怀恋，
+                        如果每次邂逅使你感到一种甜蜜的紧张，如果那次擦肩使你感到难言的惆怅，那么你很可能遇到了爱。<br />
+                        <br />
+                        （二）爱的美好<br />
+                        <br />
+                        &emsp;&emsp;爱情，无论短暂还是长久，无论是修成正果还是毫无结果的，都是美好的，甚至陌生异性之间惊鸿一瞥的好感与朦胧的激动抑或莫名的惆怅，也都是美好的。
+                        这种美好，来源于自身心中产生的特殊感觉：有能力去爱人的自豪感以及有幸运去被爱的安全感，以及从中油然而生的甜蜜感。
+                        一个爱情之所以会延续，是因为双方都想把这种甜蜜延续；一个爱情之所以会破裂，是因为现实中的相伴无法满足双方想要的甜蜜。<br />
+                        &emsp;&emsp;校园言情剧的典型代表《致我们单纯的小美好》，成绩垫底的女主角长得可爱，因一腔热血钟情于她的同学江辰，而自己捅出来的篓子，总会有全知全能的男主角替她解决。
+                        这种遥不可及的情节之所以会受到追捧，无疑是这种“零负担的情感”唤起了多少人心中的甜蜜。<br />
+                        &emsp;&emsp;能够感受到这一切的内心，都是年轻的。<br />
+                        <br />
+                        （三）爱的时间<br />
+                        <br />
+                        &emsp;&emsp;幼小时肆无忌惮地诉说“我爱XXX”，往往被大人们付之一笑，冠之以“天真无邪”，因为此时连“爱”的概念都尚未形成。<br />
+                        &emsp;&emsp;懵懵懂懂的时期过了，听说了“早恋”这个新名词，“理解”了老师家长对其的反对，“明白”了其危害，云云。然而，我们仍然对异性的一切感到好奇神秘，
+                        甚至在最“高危”的时间段，“男/女朋友”仍然是神奇的词汇。其实，所有的“早恋”也好，对同学的“造谣”也罢，都是我们对爱本能的不懈探索与想象。<br />
+                        &emsp;&emsp;老师家长对此常说的一句话是：“现在有什么意义？你们不懂，现在的什么男女朋友，以后都不会在一起的！等你到了大学就好了！”
+                        杜绝是不可能的，学生爱情的例子比比皆是，层出不穷，然多数确实是应老师家长所言，没得好的结果。他们往往以此为据，解释云：<br />
+                        &emsp;&emsp;“人是现实的，婚姻是要考虑家庭经济的！”<br />
+                        &emsp;&emsp;“人心是善变的，马拉松的爱情是难以坚持的！”<br />
+                        &emsp;&emsp;……<br />
+                        &emsp;&emsp;所以我也常是认为，懵懂以后、大学之前的爱是没有意义的。但我的理由却与那些“大人们“时常援引的不同。<br />
+                        &emsp;&emsp;你与TA，爱了就会感到甜蜜，甜蜜了就会付诸某些行动，有了行动就一定会被同样受到来自巨大教育压力的老师发现，被老师发现就不可能不被诉诸家长。
+                        美好的事物不幸遭到曝光，然后在老师家长和学习本身的三重压力下，什么甜蜜感都会化作乌有，最后不消外力攻击，自己内心先疲惫不堪而使感情无法维系。<br />
+                        &emsp;&emsp;不管哪个理由正确，总之，爱，应该找到一个合适的时间。<br />
+                        <br />
+                        （四）爱的情境<br />
+                        <br />
+                        &emsp;&emsp;爱情的发生，几乎不可能像所有的暖心言情小说一样一见钟情，因为没有必要的理解；也几乎不可能在相处过于熟稔毫无保留的朋友之间出现，因为没有必要的激情。
+                        爱情的发生在有所接触而又不太熟识之间，既有神秘感，又有亲切感，既能给想象力留出充分的余地，又能使吸引力发挥到令人满意的程度。<br />
+                        &emsp;&emsp;看情感节目，那些“一对新人”的“爱情”，又有几个是真正如初高中那般，在经历了无数平凡日子的陪伴，在历经了无数内心变化的倾诉而建立的呢？
+                        或许很多只是“我想要爱”而产生的“爱”，甚至沦为“各取所需”罢。<br />
+                        &emsp;&emsp; 爱情的发生需要适宜的情境。彼此太了解，就不易发生爱情；过于陌生和隔膜，爱情也是无稽之谈。<br />
+                        <br />
+                        （五）爱的结果<br />
+                        <br />
+                        &emsp;&emsp;爱情与感情是一回事，婚姻与亲情是另一回事。<br />
+                        &emsp;&emsp;婚姻一定是以亲情的指向为归宿的，而爱的价值在于它自身，而不在于结果。之前已经反复提到过：甜蜜。<br />
+                        &emsp;&emsp;爱情的维持是激情，但激情就像是不可再生资源，开采得过快一定会有枯竭无法持久的那天。而婚姻是否持续，“正果”是否修成，取决于激情消退过后亲情有无产生。<br />
+                        &emsp;&emsp;我们祝愿有情人终成眷属，然而注重“结果”的爱是沉重的，它是一种负重。<br />
+                        &emsp;&emsp;我们提倡婚姻自由，希冀“当爱情不在的时候，just go away”，然而不注重“结果”的爱是轻浮的，它是一种不负责任。<br />
+                        &emsp;&emsp;于是这就趋向于一种矛盾的结果。避免矛盾的理想情况，就是我们心中的完美爱情。不过，如果没有永远在一起，也请永远不要怨恨。
+                        爱情的目标，是甜蜜，如果滋生了怨恨，这段爱情就彻底失去了意义。<br />
+                        &emsp;&emsp;“愿妻娘子相离之后，重梳蝉鬓，美扫峨眉，巧逞窈窕之姿，选聘高官之主。解怨释结，更莫相憎，一别两宽，各生欢喜。”<br />
+                        <br />
+                        （六）爱的次数<br />
+                        <br />
+                        &emsp;&emsp;我不相信人一生只能爱一次，但我也不认为人的一生必须爱许多次。
+                        只要在结束前一段感情前不开启下一段，开启下一段感情后不纠缠前一段，那么次数就不说明问题，也就没有必要为之有负罪感。
+                        爱情与良心的冲突只存在于一颗善良的心中。在一颗卑劣的心看来，没有爱情也没有良心，只有满足的渴求，或者利害的算计。
+                        爱情是在异性世界中的探险而非猎奇，是在异性世界中的暂留而非定居。
+                        毋宁说，爱情中的双方，都有享受自身自由的权利和捍卫对方自由的义务，好的爱情是以双方自由、安宁和幸福为最高赠礼的洒脱以及绝不滥用这一份自由的珍惜。<br />
+                        &emsp;&emsp;譬如去询问一位已婚人士，TA的内心很大可能对生命生活中的一位不是TA伴侣的异性有一种欣赏的情愫。
+                        可是只要TA仍然关爱体贴着TA的伴侣并且从未对另一位有非分之行，TA便仍可以放心，自己是一个负责任之人，绝非放浪形骸之人——
+                        人生魅力的前提之一是，新的爱情的可能性始终在朝你敞开着，哪怕你并不去实现它们。<br />
+                        &emsp;&emsp;爱的次数是对一个人内心容量的考量。一次爱情就像一朵浪花，你是深谷，许多爱情就像一条江流；你是浅滩，许多爱情就是一次洪水。<br />
+                        &emsp;&emsp;于是也就突然想起一句不知从哪开始流传的话：“多情不等于花心。花心是把别人的心骗过来，多情是把别人的心送出去”。<br />
+                        &emsp;&emsp;扑哧。<br />
+                        <br />
+                    </div>
+                </li>
+                <li>
+                    <hr />
+                    <h2><a id="C3">Words to my guests</a></h2>
+                    &emsp;&emsp;首先，真的很感谢你来到这里。<br />
+                    &emsp;&emsp;虽说这个小网页是作业使然的产物，但仍然引我倾予精力与热情。故虽简陋无华，仍愿能博你喜欢。<br />
+                    &emsp;&emsp;看罢其他人的网页，从内容至美工一应俱全，功能丰富多彩、多种多样，而我这边就只是简单几何图形与色块的机械堆砌，难免相形见绌了。<br />
+                    &emsp;&emsp;本主页可能有不定期更新，有兴趣还请再次光顾小站。<br />
+                    &emsp;&emsp;另外，关于页头的图片，图源来自画师WLOP的作品《鬼刀》，请勿用于商业用途。
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div id="bottom">
+        <center>
+            <span>
+                <script type="text/javascript">
+                     var date = new Date();
+                     document.write(date.getFullYear() + "年" + (date.getMonth() + 1) + "月" + date.getDate() + "日" + " 星期" + "日一二三四五六".charAt(date.getDay()));
+                </script>
+                <br />
+                人总是习惯性地对自己不了解的事物心怀疑虑与猜忌，而对自己熟悉的东西带有偏爱和袒护。
+                <br />
+            </span>
+        </center>
+    </div>
+    <hr />
+
+    <script type="text/javascript">
+        function firstpage_click(){
+            alert('这个功能还没有完善，请耐心等待日后更新~(｡･ω･｡)ﾉ♡');
+        }
+        function head_click() {
+            alert('也许你想帮我换个头像？然则我拒绝XD');
+        }
+        function diary_click(d) {
+            if (document.getElementById(d).style.display == "none")
+                document.getElementById(d).style.display = '';
+            else
+                document.getElementById(d).style.display = "none";
+        }
+
+
+        const docStyle = document.documentElement.style
+        const aElem = document.querySelector('a')
+        const boundingClientRect = aElem.getBoundingClientRect()
+
+        aElem.onmousemove = function (e) {
+
+            const x = e.clientX - boundingClientRect.left
+            const y = e.clientY - boundingClientRect.top
+
+            const xc = boundingClientRect.width / 2
+            const yc = boundingClientRect.height / 2
+
+            const dx = x - xc
+            const dy = y - yc
+
+            docStyle.setProperty('--rx', `${dy / -1}deg`)
+            docStyle.setProperty('--ry', `${dx / 10}deg`)
+
+        }
+
+        aElem.onmouseleave = function (e) {
+            docStyle.setProperty('--ty', '0')
+            docStyle.setProperty('--rx', '0')
+            docStyle.setProperty('--ry', '0')
+        }
+
+        aElem.onmousedown = function (e) {
+            docStyle.setProperty('--tz', '-25px')
+        }
+
+        document.body.onmouseup = function (e) {
+            docStyle.setProperty('--tz', '-12px')
+        }
+
+    </script>
+
+</body>
+</html>
