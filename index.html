@@ -115,19 +115,7 @@
             overflow: auto;
         }
 
-        #show_diary1 {
-            border: none;
-            background-color: burlywood;
-            color: brown;
-        }
-
-        #show_diary2 {
-            border: none;
-            background-color: burlywood;
-            color: brown;
-        }
-
-        #show_diary3 {
+        .show_diary {
             border: none;
             background-color: burlywood;
             color: brown;
@@ -185,9 +173,27 @@
             <ul>
                 <li>
                     <h2><a id="C2">Diary</a></h2>
+                    <!----------------------------------------------------------------------------------------->
                     <center>
-                        <em>（最新）</em>基础实验2开发日志&emsp;19.7.7&emsp;&emsp;&emsp;
-                        <button id="show_diary3" onclick="diary_click('article3')">展开/收起</button>
+                        <em>（最新）</em>更新日志暨基础实验3重要心得：CSS中#和.的区别&emsp;19.7.9&emsp;&emsp;&emsp;
+                        <button class="show_diary" onclick="diary_click('article4')">展开/收起</button>
+                    </center>
+                    <br />
+                    <div id="article4">
+                        &emsp;&emsp;id：用来定义页面中大的样式，如栏目划分——顶部、正文、底部等；用#id的形式来定义。<br/>
+                        &emsp;&emsp;class：用来定义一些比较细节的样式，如具体的一个菜单、一行文字等；用.style的形式来定义。<br />
+                        &emsp;&emsp;#id是固定标签，定义的是对应id的具体对象的专有属性，只能在网页中出现一次。<br />
+                        &emsp;&emsp;.style是样式组，定义的是抽象对象的共有属性，可以被不同的具体对象无限调用。<br />
+                        &emsp;&emsp;根据这个原则，将原本id为show_diary1~4的展开/折叠按钮用style进行了重写。<br />
+                        <br />
+                    </div>
+                    <!----------------------------------------------------------------------------------------->
+                    <br />
+                    <br />
+                    <!----------------------------------------------------------------------------------------->
+                    <center>
+                        基础实验2开发日志&emsp;19.7.7&emsp;&emsp;&emsp;
+                        <button class="show_diary" onclick="diary_click('article3')">展开/收起</button>
                     </center>
                     <br />
                     <div id="article3">
@@ -208,11 +214,13 @@
                         允许函数嵌套定义，“现用现定”成为可能。这两点使Javascript在使用时相较之前常用的C族语言有强烈的灵活性与便利性，但也带来了某些情况下的不清晰性。
                         <br />
                     </div>
+                    <!----------------------------------------------------------------------------------------->
                     <br />
                     <br />
+                    <!----------------------------------------------------------------------------------------->
                     <center>
                         无题&emsp;19.7.3&emsp;&emsp;&emsp;
-                        <button id="show_diary2" onclick="diary_click('article2')">展开/收起</button>
+                        <button class="show_diary" onclick="diary_click('article2')">展开/收起</button>
                     </center>
                     <br />
                     <div id="article2">
@@ -222,11 +230,13 @@
                         &emsp;&emsp;由此可见，完善地掌握前端开发的细节规范，应该是程序开发者出于道义和远见的必要行为。<br />
                         <br />
                     </div>
+                    <!----------------------------------------------------------------------------------------->
                     <br />
                     <br />
+                    <!----------------------------------------------------------------------------------------->
                     <center>
                         爱的札记&emsp;18.9.30&emsp;&emsp;&emsp;
-                        <button id="show_diary1" onclick="diary_click('article1')">展开/收起</button>
+                        <button class="show_diary" onclick="diary_click('article1')">展开/收起</button>
                     </center>
                     <br />
                     <div id="article1">
@@ -304,6 +314,7 @@
                         &emsp;&emsp;扑哧。<br />
                         <br />
                     </div>
+                    <!----------------------------------------------------------------------------------------->
                 </li>
                 <li>
                     <hr />
