@@ -1,131 +1,11 @@
 ﻿<!DOCTYPE html>
+
+<link rel=" stylesheet" href="Homepage.css">
+<script src="Homepage.js"></script>
+
 <html>
 <head>
     <title>襄江蒲苇岸——愿沿岸皆为美忆</title>
-
-    <style>
-        a:link {
-            color: #191970;
-            text-decoration: none;
-        }
-
-        a:visited {
-            color: #191970;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #ff7f50;
-            text-decoration: none;
-        }
-
-        body {
-            background-color: #b0c4de;
-        }
-
-        #totop {
-            font-family: 'Lucida Calligraphy';
-            font-size:13px;
-            position: fixed;
-            left: 13px;
-            top: 500px;
-            display: inline-block;
-            padding: 0.8em 1.0em;
-            text-align: center;
-            cursor: pointer;
-            user-select: none;
-            color: white;
-        }
-
-        #totop::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            border-radius: 4px;
-            transition: box-shadow .5s ease, transform .2s ease;
-            will-change: transform;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
-            transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
-        }
-
-        #totop:hover::before {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
-        }
-
-        #totop::after {
-            position: relative;
-            display: inline-block;
-            content: attr(data-title);
-            transition: transform .2s ease;
-            font-weight: bold;
-            letter-spacing: .01em;
-            will-change: transform;
-            transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
-        }
-
-        #main {
-            margin: 0 auto;
-            max-width: 1000px;
-            display: flex;
-            flex-direction: row;
-            background-color: burlywood;
-            overflow: auto;
-        }
-
-        #nav {
-            font-size: 18px;
-            min-width: 800px;
-        }
-
-        #aside {
-            font-size: 12px;
-            min-width: 120px;
-            max-width: 120px;
-            padding-left: 5px;
-            padding-right: 5px;
-            background-color: blanchedalmond;
-            overflow: auto;
-        }
-
-        #head_pic {
-            margin-top: 20px;
-            background-image: url(images/head.jpg);
-            width: 100px;
-            height: 100px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        #C1 {
-            font-size: 17px;
-            color: brown;
-        }
-
-        #content {
-            font-family: 'Monotype Corsiva';
-            margin-left: 10px;
-            margin-right: 10px;
-            background-color: burlywood;
-            display: flex;
-            flex-direction: column;
-            overflow: auto;
-        }
-
-        .show_diary {
-            border: none;
-            background-color: burlywood;
-            color: brown;
-        }
-
-        #bottom {
-            font-size: 16px;
-            color: #191970;
-        }
-    </style>
 </head>
 
 <body leftmargin="10" topmargin="20">
@@ -175,12 +55,29 @@
                     <h2><a id="C2">Diary</a></h2>
                     <!----------------------------------------------------------------------------------------->
                     <center>
-                        <em>（最新）</em>更新日志暨基础实验3重要心得：CSS中#和.的区别&emsp;19.7.9&emsp;&emsp;&emsp;
+                        <em>（最新）</em>基础实验4重要心得，暨网页源码重构更新日志&emsp;19.7.14&emsp;&emsp;&emsp;
+                        <button class="show_diary" onclick="diary_click('article5')">展开/收起</button>
+                    </center>
+                    <br />
+                    <div id="article5">
+                        &emsp;&emsp;本次实验的过程及原理等诸多细节已经作为实验报告提交了，这里不再赘述，仅做简要总结：<br />
+                        &emsp;&emsp;增进了对控制台指令的了解，尝试进行了有关服务器和控制台的操作；增进了对ip端口的理解。<br />
+                        &emsp;&emsp;关于网页源码重构：<br />
+                        &emsp;&emsp;本个人网站初建时，由于时间紧迫，加上当时对于html网页结构缺乏完整详细的认识，没有将style标签和script标签下的内容置入css文件和js文件。
+                        本次实验过程中一并进行了网页代码结构优化工作，处理了这个问题。<br />
+                        <br />
+                    </div>
+                    <!----------------------------------------------------------------------------------------->
+                    <br />
+                    <br />
+                    <!----------------------------------------------------------------------------------------->
+                    <center>
+                        更新日志暨基础实验3重要心得：CSS中#和.的区别&emsp;19.7.9&emsp;&emsp;&emsp;
                         <button class="show_diary" onclick="diary_click('article4')">展开/收起</button>
                     </center>
                     <br />
                     <div id="article4">
-                        &emsp;&emsp;id：用来定义页面中大的样式，如栏目划分——顶部、正文、底部等；用#id的形式来定义。<br/>
+                        &emsp;&emsp;id：用来定义页面中大的样式，如栏目划分——顶部、正文、底部等；用#id的形式来定义。<br />
                         &emsp;&emsp;class：用来定义一些比较细节的样式，如具体的一个菜单、一行文字等；用.style的形式来定义。<br />
                         &emsp;&emsp;#id是固定标签，定义的是对应id的具体对象的专有属性，只能在网页中出现一次。<br />
                         &emsp;&emsp;.style是样式组，定义的是抽象对象的共有属性，可以被不同的具体对象无限调用。<br />
@@ -343,57 +240,6 @@
         </center>
     </div>
     <hr />
-
-    <script type="text/javascript">
-        function firstpage_click(){
-            alert('这个功能还没有完善，请耐心等待日后更新~(｡･ω･｡)ﾉ♡');
-        }
-        function head_click() {
-            alert('也许你想帮我换个头像？然则我拒绝XD');
-        }
-        function diary_click(d) {
-            if (document.getElementById(d).style.display == "none")
-                document.getElementById(d).style.display = '';
-            else
-                document.getElementById(d).style.display = "none";
-        }
-
-
-        const docStyle = document.documentElement.style
-        const aElem = document.querySelector('a')
-        const boundingClientRect = aElem.getBoundingClientRect()
-
-        aElem.onmousemove = function (e) {
-
-            const x = e.clientX - boundingClientRect.left
-            const y = e.clientY - boundingClientRect.top
-
-            const xc = boundingClientRect.width / 2
-            const yc = boundingClientRect.height / 2
-
-            const dx = x - xc
-            const dy = y - yc
-
-            docStyle.setProperty('--rx', `${dy / -1}deg`)
-            docStyle.setProperty('--ry', `${dx / 10}deg`)
-
-        }
-
-        aElem.onmouseleave = function (e) {
-            docStyle.setProperty('--ty', '0')
-            docStyle.setProperty('--rx', '0')
-            docStyle.setProperty('--ry', '0')
-        }
-
-        aElem.onmousedown = function (e) {
-            docStyle.setProperty('--tz', '-25px')
-        }
-
-        document.body.onmouseup = function (e) {
-            docStyle.setProperty('--tz', '-12px')
-        }
-
-    </script>
 
 </body>
 </html>

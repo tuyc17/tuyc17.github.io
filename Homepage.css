@@ -1,0 +1,121 @@
+a:link {
+    color: #191970;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #191970;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff7f50;
+    text-decoration: none;
+}
+
+body {
+    background-color: #b0c4de;
+}
+
+#totop {
+    font-family: 'Lucida Calligraphy';
+    font-size: 13px;
+    position: fixed;
+    left: 13px;
+    top: 500px;
+    display: inline-block;
+    padding: 0.8em 1.0em;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+
+    #totop::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(135deg, #6e8efb, #a777e3);
+        border-radius: 4px;
+        transition: box-shadow .5s ease, transform .2s ease;
+        will-change: transform;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0)) translateZ(var(--tz, -12px));
+    }
+
+    #totop:hover::before {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+    }
+
+    #totop::after {
+        position: relative;
+        display: inline-block;
+        content: attr(data-title);
+        transition: transform .2s ease;
+        font-weight: bold;
+        letter-spacing: .01em;
+        will-change: transform;
+        transform: translateY(var(--ty, 0)) rotateX(var(--rx, 0)) rotateY(var(--ry, 0));
+    }
+
+#main {
+    margin: 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    background-color: burlywood;
+    overflow: auto;
+}
+
+#nav {
+    font-size: 18px;
+    min-width: 800px;
+}
+
+#aside {
+    font-size: 12px;
+    min-width: 120px;
+    max-width: 120px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: blanchedalmond;
+    overflow: auto;
+}
+
+#head_pic {
+    margin-top: 20px;
+    background-image: url(images/head.jpg);
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#C1 {
+    font-size: 17px;
+    color: brown;
+}
+
+#content {
+    font-family: 'Monotype Corsiva';
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.show_diary {
+    border: none;
+    background-color: burlywood;
+    color: brown;
+}
+
+#bottom {
+    font-size: 16px;
+    color: #191970;
+}
